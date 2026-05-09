@@ -38,29 +38,6 @@ rgb(0, 4, 17)
 
 `
 
-export const HeaderBackGround = styled.div`
-    display: flex;
-    width: 85%;
-    height: 30vh;
-    margin-top: 100px;
-    align-items: center;
-    justify-content: center;
-
-    @media screen {
-        margin-top: 30px;
-    }
-
-    img {
-        width: 100%;
-        max-width: 800px;
-        max-height: 100%;
-        justify-content: center;
-        border-radius: 30px;
-        align-items: center;
-        padding: 10px;
-    }
-`
-
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
@@ -99,24 +76,6 @@ export const InputLabel = styled.label`
     }
 `
 
-export const Button = styled.button`
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    width: 50%;
-    background-color:rgb(198, 201, 175);
-    height: 38px;
-    margin: 14px;
-
-    &:hover {
-        opacity: 0.8;
-    }
-
-    &:active {
-        opacity: 0.5;
-    }
-
-`
 
 export const Title = styled.h2`
     font-size: 40px;

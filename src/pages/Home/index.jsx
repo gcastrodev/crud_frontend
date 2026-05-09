@@ -1,17 +1,16 @@
 import { useRef } from "react"
 import api from "../../services/api"
 import { 
-  Button,
   Container, 
   ContainerInputs, 
   Form, 
-  HeaderBackGround, 
   Input, 
   InputLabel, 
   Title,
   Span
 } from "./styles"
-import UsersImage from '../../assets/users.jpg'
+import BackgroundImage from "../../components/ImageHeader"
+import MyButton from "../../components/Button"
 
 
 function Home() {
@@ -32,10 +31,8 @@ const registerNewUser = async () => {
 
     <Container>
 
-      <HeaderBackGround>
-        <img src={UsersImage} alt="users_image"/>
-      </HeaderBackGround>
-
+    <BackgroundImage />
+ 
     <Form>
 
       <Title> <Span>→</Span> Cadastro de Usuários <span>←</span> </Title>
@@ -63,7 +60,7 @@ const registerNewUser = async () => {
       <Input type='email' placeholder='E-mail do usuário' ref={dataUserEmail}/>
       </div>
 
-    <Button type='button' onClick={registerNewUser}>Cadastrar Usuário</Button>
+    <MyButton type='button' onClick={registerNewUser}>Cadastrar Usuário</MyButton>
     </Form>
 
     </Container>
