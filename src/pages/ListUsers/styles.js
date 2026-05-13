@@ -84,7 +84,7 @@ export const UserCard = styled.article`
     flex-direction: column;
     align-items: center;
     gap: 14px;
-    padding: 18px 48px 18px 18px;
+    padding: 18px 56px 18px 18px;
     width: 100%;
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.96);
@@ -96,7 +96,7 @@ export const UserCard = styled.article`
         flex-direction: row;
         align-items: center;
         gap: 20px;
-        padding: 20px 52px 20px 20px;
+        padding: 20px 60px 20px 20px;
     }
 `
 
@@ -169,6 +169,93 @@ export const FieldValue = styled.span`
     font-size: 0.95rem;
     color: #2c333d;
     word-break: break-word;
+`
+
+export const EditInput = styled.input`
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d2dbe3;
+    font-size: 0.95rem;
+    outline: none;
+    background: #fff;
+
+    &:focus {
+        border-color: #1a3a5c;
+    }
+`
+
+export const EditActionsRow = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+    width: 100%;
+
+    @media (min-width: 600px) {
+        justify-content: flex-start;
+    }
+`
+
+export const SaveEditButton = styled.button`
+    min-width: 88px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid rgb(198, 201, 175);
+    background: rgb(198, 201, 175);
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #1a1a1a;
+
+    &:hover {
+        opacity: 0.9;
+    }
+`
+
+export const CancelEditButton = styled.button`
+    min-width: 88px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid #5a6570;
+    background: transparent;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #2c333d;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+`
+
+export const EditAction = styled.button`
+    position: absolute;
+    top: 56px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 8px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1a3a5c;
+    transition: background 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+        background: rgba(0, 60, 120, 0.12);
+    }
+
+    &:active {
+        transform: scale(0.96);
+    }
 `
 
 export const DeleteAction = styled.button`
