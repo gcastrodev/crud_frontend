@@ -1,16 +1,65 @@
-# React + Vite
+# CRUD Frontend — Usuários
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface em React para cadastro, listagem, edição e exclusão de usuários, consumindo uma API REST em `http://localhost:3000`.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [React](https://react.dev/) 19 e [Vite](https://vite.dev/)
+- [React Router](https://reactrouter.com/) (rotas)
+- [styled-components](https://styled-components.com/) (estilos)
+- [Axios](https://axios-http.com/) (HTTP)
 
-## React Compiler
+## Pré-requisitos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js (versão compatível com o Vite 8 do projeto)
+- API backend ativa na porta **3000** (veja endpoints abaixo)
 
-## Expanding the ESLint configuration
+## Como rodar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Abra o endereço exibido no terminal (geralmente `http://localhost:5173`).
+
+Outros scripts:
+
+| Comando        | Descrição              |
+| -------------- | ---------------------- |
+| `npm run dev`  | Servidor de desenvolvimento |
+| `npm run build` | Build de produção     |
+| `npm run preview` | Pré-visualiza o build |
+| `npm run lint` | ESLint                 |
+
+## Rotas da aplicação
+
+| Caminho               | Página        |
+| --------------------- | ------------- |
+| `/`                   | Cadastro de usuário |
+| `/lista_de_usuarios`  | Lista, edição e exclusão |
+
+## API esperada
+
+A base URL está em `src/services/api.js` (`http://localhost:3000`). O frontend usa:
+
+| Método | Caminho            | Uso |
+| ------ | ------------------ | --- |
+| `POST` | `/usuarios`        | Cadastro (corpo: `name`, `age`, `email`) |
+| `GET`  | `/usuarios`        | Lista todos |
+| `PUT`  | `/usuarios/:id`    | Atualização (corpo: `name`, `age`, `email`; resposta esperada com `user` atualizado) |
+| `DELETE` | `/usuarios/:id`  | Remove o usuário |
+
+Para usar outro host ou porta, altere `baseURL` em `src/services/api.js` (ou evolua o projeto com variáveis de ambiente, se preferir).
+
+## Estrutura principal
+
+- `src/pages/Home` — formulário de cadastro
+- `src/pages/ListUsers` — lista e ações de edição/exclusão
+- `src/services/api.js` — cliente Axios
+- `src/routes.jsx` — definição das rotas
+- `src/components` — componentes reutilizáveis (botão, cabeçalho com imagem)
+
+## Licença
+
+Projeto privado (`"private": true` no `package.json`).
